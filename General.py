@@ -1,7 +1,5 @@
 # -*- coding: UTF-8 -*-
 #Museo Natural de Historia Universidad de los Llanos
-#Daniel Fernando Muñoz Meléndez
-#Julian Esteban Ramos Martinez
 #Ingenieria de Sistemas 2014
 
 
