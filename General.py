@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 #Museo Natural de Historia Universidad de los Llanos
 #Ingenieria de Sistemas 2014
+#Implementar la conexcion y peticiones en una clase independiente
 
 
 
@@ -55,8 +56,8 @@ class Login(QMainWindow):
     	self.usuario = self.ui.TxtUsuario.text()
         self.clave = self.ui.TxtClave.text()
         host="localhost"
-        userdb="root"
-        passdb="10267"
+        userdb="Visualizar"
+        passdb=""
         bdausar="mhnu"
         In="' or '1'='1' -- '"
         if self.usuario=="" or self.clave=="":
@@ -185,8 +186,8 @@ class CambioPassword(QMainWindow):
 		else:
 			if RepetirNuevaClave == NuevaClave:
 				host="localhost"
-				userdb="root"
-				passdb="10267"
+				userdb="DM"
+				passdb=""
 				bdausar="mhnu"
 				db=MySQLdb.connect(host,userdb,passdb,bdausar)
 				curso=db.cursor()
@@ -230,8 +231,8 @@ class ControlUsers(QMainWindow):
 	def ConfirmarCambio(self):
 		Users.ObtenerDatos()
 		host="localhost"
-		userdb="root"
-		passdb="10267"
+		userdb="DM"
+		passdb=""
 		bdausar="mhnu"
 		con="select * from usuarios where clave='%s';" % self.Passadmin
 		cambio="update usuarios set clave='%s' where nomb_usuar='%s';"%(self.PassNueva,self.NombreUser)
@@ -267,8 +268,8 @@ class ControlUsers(QMainWindow):
 		tipo=str(TipoUser)
 		tipo=tipo.upper()
 		host="localhost"
-		userdb="root"
-		passdb="10267"
+		userdb="DM"
+		passdb=""
 		bdausar="mhnu"
 		inserccion="insert into usuarios (nomb_usuar,clave,tipo_us) values ('%s','%s','%s');"%(NewUser,NewPass,tipo)
 		if NewUser=="" or NewPass=="" or RepetirPass=="" or Passadmon=="":
@@ -312,8 +313,8 @@ class EliminarUsuario(QMainWindow):
 			
 	def Eliminar(self,user,passw):
 		host="localhost"
-		userdb="root"
-		passdb="10267"
+		userdb="DM"
+		passdb=""
 		bdausar="mhnu"
 		con="select * from usuarios where clave='%s';" % passw
 		delete="delete from usuarios where nomb_usuar='%s';"% user
